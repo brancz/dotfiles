@@ -17,8 +17,8 @@
 
 ## Compile vim with GUI and Ruby ##
     $ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
-    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-    libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial ruby1.9.1 ruby1.9.1-dev
+      libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+      libcairo2-dev libx11-dev libxpm-dev libxt-dev mercurial ruby1.9.1 ruby1.9.1-dev
     $ cd ~/Downloads
     $ hg clone https://vim.googlecode.com/hg/ vim
     $ cd vim/src 
@@ -29,13 +29,19 @@
 
 1. Download the files using git
 
-    flops@flops:~$ git clone https://github.com/flopska/dotfiles.git
-		flops@flops:~$ cd dotfiles
-		flops@flops:~$ git submodule init
-		flops@flops:~$ git submodule update
+    $ git clone https://github.com/flopska/dotfiles.git
+		$ cd dotfiles
+		$ git submodule init
+		$ git submodule update
 
 2. Creat dotfile symlinks
 
 		flops@flops:~$ stow --target=$HOME vim		// to create .vim and .vimrc symlinks in ~
+
+3. Compile command-t
+
+    $ cd ~/.vim/bundle/command-t/ruby/command-t
+    $ ruby extconf.rb
+    $ make
 
 3. Enjoy
