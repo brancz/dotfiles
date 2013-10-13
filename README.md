@@ -7,7 +7,7 @@
 
 ## Install oh-my-zsh ##
     $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh 
-    $ git clone https://github.com:flopska/dotfiles.git
+    $ git clone https://github.com/flopska/dotfiles.git
     $ cd dotfiles
     $ ln -s $(pwd)/zsh/flopska.zsh-theme ~/.oh-my-zsh/themes/flopska.zsh-theme
     $ ln -s $(pwd)/zsh/zshrc ~/.zshrc
