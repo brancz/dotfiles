@@ -12,4 +12,4 @@
 	url = http://github.com/tomasr/molokai.git
 [submodule "vim/.vim/bundle/command-t"]
 	path = vim/.vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = https://github.com/wincent/Command-T.git
