@@ -7,7 +7,7 @@
 
 ## Install oh-my-zsh ##
     $ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh 
-    $ git clone https://github.com:flopska/dotfiles.git
+    $ git clone https://github.com/flopska/dotfiles.git
     $ cd dotfiles
     $ ln -s $(pwd)/zsh/flopska.zsh-theme ~/.oh-my-zsh/themes/flopska.zsh-theme
     $ ln -s $(pwd)/zsh/zshrc ~/.zshrc
@@ -25,23 +25,23 @@
     $ ./configure --with-features=huge --enable-gui=gnome2 --enable-rubyinterp 
     $ make; sudo make install
 
-## Install vim files
+## Install vim files ##
 
-1. Download the files using git
+Download the files using git
 
     $ git clone https://github.com/flopska/dotfiles.git
-		$ cd dotfiles
-		$ git submodule init
-		$ git submodule update
+    $ cd dotfiles
+    $ git submodule init
+    $ git submodule update
 
-2. Creat dotfile symlinks
+Creat dotfile symlinks
 
-		flops@flops:~$ stow --target=$HOME vim		// to create .vim and .vimrc symlinks in ~
+    $ stow --target=$HOME vim		// to create .vim and .vimrc symlinks in ~
 
-3. Compile command-t
+Compile command-t
 
     $ cd ~/.vim/bundle/command-t/ruby/command-t
     $ ruby extconf.rb
     $ make
 
-3. Enjoy
+Enjoy
