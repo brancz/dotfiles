@@ -13,7 +13,7 @@ filetype plugin indent on       " load file type plugins + indentation
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set softtabstop=2               " enable correct backspacing
-set expandtab                   " use spaces, not tabs (optional)
+" set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
@@ -46,3 +46,22 @@ colorscheme molokai
 
 "" no toolbar
 set guioptions=aegimrLt
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+function! FeedVisualCmd(cmdpat)
+    let [qr, qt] = [getreg('"'), getregtype('"')]
+    silent norm! gvy
+    let cmd = printf(a:cmdpat, shellescape(@"))
+    call setreg('"', qr, qt)
+    echo system(cmd)
+    if v:shell_error
+        echohl ErrorMsg | echom 'Failed to run ' . cmd | echohl NONE
+    endif
+endfunction
+
+vnoremap <leader>p :<c-u>call FeedVisualCmd('"curl" --data ''{"paste":{"title":"vim-paste","content":"%s","language":""}}'' -i -H "Accept: application/json" -H "Content-Type: application/json" http://vim-pastebin.herokuapp.com/pastes.json')<cr>
