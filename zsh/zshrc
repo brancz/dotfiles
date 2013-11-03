@@ -10,6 +10,9 @@ ZSH_THEME="flopska"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sr="screen -r"
+alias vi="vim"
+alias vim="vim -g"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

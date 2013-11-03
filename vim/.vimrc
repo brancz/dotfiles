@@ -44,9 +44,6 @@ nnoremap k gk
 "" molokai Colorscheme
 colorscheme molokai 
 
-"" no toolbar
-set guioptions=aegimrLt
-
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
  
@@ -65,3 +62,6 @@ function! FeedVisualCmd(cmdpat)
 endfunction
 
 vnoremap <leader>p :<c-u>call FeedVisualCmd('"curl" --data ''{"paste":{"title":"vim-paste","content":"%s","language":""}}'' -i -H "Accept: application/json" -H "Content-Type: application/json" http://vim-pastebin.herokuapp.com/pastes.json')<cr>
+"
+"" no toolbar and no scrollbar
+set guioptions=aegimLt
