@@ -12,7 +12,10 @@ ZSH_THEME="flopska"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sr="screen -r"
 alias vi="vim"
-alias vim="vim -g"
+alias wow="git status"
+alias such="git"
+alias much="git"
+alias very="git"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
