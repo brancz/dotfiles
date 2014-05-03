@@ -18,6 +18,9 @@ alias much="git"
 alias very="git"
 alias r="rails"
 alias rvim="rvm use 2.1.0; vim"
+alias cb="xclip -selection c -i"
+alias cbssh="cat ~/.ssh/id_rsa.pub | cb"
+alias cbwd="pwd | cb"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
