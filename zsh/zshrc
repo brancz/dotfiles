@@ -59,3 +59,6 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /home/flower-pot/.travis/travis.sh ] && source /home/flower-pot/.travis/travis.sh
