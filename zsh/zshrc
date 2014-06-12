@@ -22,6 +22,7 @@ alias rvim="rvm use 2.1.0; vim"
 alias cb="xclip -selection c -i"
 alias cbssh="cat ~/.ssh/id_rsa.pub | cb"
 alias cbwd="pwd | cb"
+alias docs="zeal --query $1 &"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
