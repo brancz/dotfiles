@@ -63,3 +63,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # added by travis gem
 [ -f /home/flower-pot/.travis/travis.sh ] && source /home/flower-pot/.travis/travis.sh
+
+export PYTHONDONTWRITEBYTECODE=true
