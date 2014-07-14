@@ -16,6 +16,7 @@ set shiftwidth=2      " a tab is two spaces (or set this to 4)
 set softtabstop=2               " enable correct backspacing
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 "" Searching
 set hlsearch                    " highlight matches
