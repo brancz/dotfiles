@@ -11,6 +11,9 @@ ZSH_THEME="flopska"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sr="screen -r"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias vim="/usr/local/bin/vim"
+fi
 alias vi="vim"
 alias wow="git status"
 alias such="git"
