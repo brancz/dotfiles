@@ -68,3 +68,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [ -f /home/flower-pot/.travis/travis.sh ] && source /home/flower-pot/.travis/travis.sh
 
 export PYTHONDONTWRITEBYTECODE=true
+
+EC2_HOME=/usr/local/ec2
+PATH=$PATH:$EC2_HOME/bin
