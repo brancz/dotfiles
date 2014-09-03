@@ -14,6 +14,9 @@ alias sr="screen -r"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   alias vim="/usr/bin/vim"
 fi
+if [[ "$OSTYPE" == linux* ]]; then
+  alias open="gnome-open"
+fi
 alias vi="vim"
 alias wow="git status"
 alias such="git"
