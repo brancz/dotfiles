@@ -74,3 +74,6 @@ export PYTHONDONTWRITEBYTECODE=true
 
 EC2_HOME=/usr/local/ec2
 PATH=$PATH:$EC2_HOME/bin
+
+GOPATH=~/go
+PATH=$PATH:$GOPATH/bin
