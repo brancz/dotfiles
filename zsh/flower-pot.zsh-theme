@@ -11,9 +11,13 @@ function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
+function rvm_ruby_info {
+    [ $rvm_ruby_string ] && echo '('$rvm_ruby_string') '
+}
+
 PROMPT='
 %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(git_prompt_info)
-$(virtualenv_info)$(prompt_char) '
+$(virtualenv_info)$(rvm_ruby_info)$(prompt_char) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
