@@ -12,7 +12,7 @@ function virtualenv_info {
 }
 
 function rvm_ruby_info {
-    [ $rvm_ruby_string ] && echo ' '$rvm_ruby_string
+    [ $rvm_ruby_string ] && echo ' '`ruby -v | awk '{ print $1 "-" $2 }'`
 }
 
 PROMPT='
