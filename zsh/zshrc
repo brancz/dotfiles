@@ -22,7 +22,9 @@ alias very="git"
 alias hd="git push heroku master"
 alias r="rails"
 alias rvim="rvm use 2.1.0; vim"
-alias cb="xclip -selection c -i"
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias cb="pbcopy"
+fi
 alias cbssh="cat ~/.ssh/id_rsa.pub | cb"
 alias cbwd="pwd | cb"
 alias docs="zeal --query $1 &"
@@ -63,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/bin # Add ~/bin to PATH
 
 # added by travis gem
 [ -f /home/flower-pot/.travis/travis.sh ] && source /home/flower-pot/.travis/travis.sh
