@@ -22,6 +22,9 @@ alias very="git"
 alias hd="git push heroku master"
 alias r="rails"
 alias rvim="rvm use 2.1.0; vim"
+if [[ "$OSTYPE" == linux* ]]; then
+  alias cb="xclip -selection c -i"
+fi
 if [[ "$OSTYPE" == darwin* ]]; then
   alias cb="pbcopy"
 fi
@@ -73,8 +76,14 @@ PATH=$PATH:$HOME/bin # Add ~/bin to PATH
 export PYTHONDONTWRITEBYTECODE=true
 
 EC2_HOME=/usr/local/ec2
+if [[ "$OSTYPE" == darwin* ]]; then
+  JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
+fi
 PATH=$PATH:$EC2_HOME/bin
 
 export GOPATH=$HOME/go
 
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# added by travis gem
+[ -f /Users/fredericbranczyk/.travis/travis.sh ] && source /Users/fredericbranczyk/.travis/travis.sh
