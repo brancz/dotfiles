@@ -1,19 +1,23 @@
 servers = (
+  { 
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+  },
   {
-    address = "<bouncer address>";
+    address = "irc.freenode.net";
     chatnet = "Freenode";
     port = "6667";
     use_ssl = "yes";
-    ssl_verify = "no";
+    ssl_verify = "yes";
     autoconnect = "yes";
-    password = "<bouncer credentials>";
   }
 );
 settings = {
   core = {
-    real_name = "<real name>";
-    user_name = "<freenode username>";
-    nick = "<freenode nick>";
+    real_name = "Frederic Branczyk";
+    user_name = "flower_pot";
+    nick = "flower_pot";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "molokai"; };
