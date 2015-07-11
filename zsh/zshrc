@@ -76,10 +76,12 @@ PATH=$PATH:$HOME/bin # Add ~/bin to PATH
 export PYTHONDONTWRITEBYTECODE=true
 
 EC2_HOME=/usr/local/ec2
+PATH=$PATH:$EC2_HOME/bin
+
 if [[ "$OSTYPE" == darwin* ]]; then
   JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
 fi
-PATH=$PATH:$EC2_HOME/bin
+PATH=$PATH:$JAVA_HOME/bin
 
 export GOPATH=$HOME/go
 
