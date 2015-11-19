@@ -19,9 +19,7 @@ alias wow="git status"
 alias such="git"
 alias much="git"
 alias very="git"
-alias hd="git push heroku master"
-alias r="rails"
-alias rvim="rvm use 2.1.0; vim"
+alias r="ranger"
 if [[ "$OSTYPE" == linux* ]]; then
   alias cb="xclip -selection c -i"
 fi
@@ -86,6 +84,7 @@ PATH=$PATH:$JAVA_HOME/bin
 export GOPATH=$HOME/go
 
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/sbin
 
 # added by travis gem
 [ -f /Users/fredericbranczyk/.travis/travis.sh ] && source /Users/fredericbranczyk/.travis/travis.sh
