@@ -1,0 +1,37 @@
+servers = (
+  {
+    address = "<znc bouncer address>";
+    chatnet = "Freenode";
+    port = "6697";
+    password = "<user>/freenode:<password>";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+settings = {
+  core = {
+    real_name = "Frederic Branczyk";
+    user_name = "brancz";
+    nick = "brancz";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "fe-common/core" = { theme = "molokai"; };
+  "perl/core/scripts" = {
+    awl_display_key = "$Q%K|%n$H$C$S";
+    nicklist_automode = "SCREEN";
+  };
+};
+chatnets = { Freenode = { type = "IRC"; }; };
+statusbar = {
+  default = {
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+logs = { };
