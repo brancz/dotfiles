@@ -66,6 +66,7 @@ alias tmux="tmux -2"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+alias ls="ls -G --color=auto"
 
 # Customize to your needs...
 
@@ -75,12 +76,20 @@ PATH=$PATH:$HOME/bin # Add ~/bin to PATH
 # added by travis gem
 [ -f /home/flower-pot/.travis/travis.sh ] && source /home/flower-pot/.travis/travis.sh
 
+if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+
 export PYTHONDONTWRITEBYTECODE=true
 
 EC2_HOME=/usr/local/ec2
 PATH=$PATH:$EC2_HOME/bin
 
 if [[ "$OSTYPE" == darwin* ]]; then
+
   JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
 fi
 PATH=$PATH:$JAVA_HOME/bin
