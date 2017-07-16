@@ -1,4 +1,10 @@
+[user]
+	name = Frederic Branczyk
+	email = fbranczyk@gmail.com
+	signingkey = 0x7741A52782A90069
+[commit]
+	gpgsign = true
 [core]
 	editor = vim
-[push]
-	default = simple
+[gpg]
+	program = gpg2
