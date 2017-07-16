@@ -101,3 +101,10 @@ function resetdocker() {
   unset DOCKER_CERT_PATH
   unset DOCKER_API_VERSION
 }
+
+function dockertag() {
+  version=$(git describe --abbrev=0)
+  buildmetadata=$(git rev-parse --abbrev-ref HEAD)
+}
+
+PATH=$PATH:/usr/local/apiserver-builder/bin
