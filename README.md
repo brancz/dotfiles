@@ -1,6 +1,13 @@
 My dotfiles
 ===========
 
+Dependencies
+------------
+
+```bash
+sudo dnf install yubikey-personalization-gui libusb tmux zsh vim irssi
+```
+
 irssi configuration
 -------------------
 
