@@ -1,5 +1,7 @@
 if [ "$TMUX" = "" ]; then tmux; fi
 
+zmodload zsh/zprof
+
 # Enable gpg-agent if it is not running
 GPG_AGENT_SOCKET="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 if [ ! -S $GPG_AGENT_SOCKET ]; then
@@ -28,10 +30,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 alias ls="ls -G --color=auto"
-source <(kubectl completion zsh)
 
 export EC2_HOME=/usr/local/ec2
-export GOPATH=$HOME/go
+export GOPATH=$HOME
 export GO111MODULE=on
 
 export PATH=$PATH:$EC2_HOME/bin
@@ -56,3 +57,41 @@ PERL_MB_OPT="--install_base \"/home/brancz/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/brancz/perl5"; export PERL_MM_OPT;
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# Check if 'kubectl' is a command in $PATH
+if [ $commands[kubectl] ]; then
+
+  # Placeholder 'kubectl' shell function:
+  # Will only be executed on the first call to 'kubectl'
+  kubectl() {
+
+    # Remove this function, subsequent calls will execute 'kubectl' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    source <(kubectl completion zsh)
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+  }
+fi
+
+# Check if 'oc' is a command in $PATH
+if [ $commands[oc] ]; then
+
+  # Placeholder 'oc' shell function:
+  # Will only be executed on the first call to 'oc'
+  oc() {
+
+    # Remove this function, subsequent calls will execute 'oc' directly
+    unfunction "$0"
+
+    # Load auto-completion
+    source <(oc completion zsh)
+
+    # Execute 'kubectl' binary
+    $0 "$@"
+  }
+fi
+
+export PATH=$PATH:$HOME/.linkerd2/bin
