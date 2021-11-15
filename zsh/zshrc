@@ -10,14 +10,15 @@ ZSH_THEME="brancz"
 if [[ "$OSTYPE" == linux* ]]; then
   alias open="gnome-open"
 fi
-alias vi="vim"
+alias vi="nvim"
 alias r="ranger"
 alias cb="xclip -selection c -i"
 
-plugins=(git)
+plugins=(git pass)
 
 source $ZSH/oh-my-zsh.sh
 alias ls="ls -G --color=auto"
+alias vim="nvim"
 
 export EC2_HOME=/usr/local/ec2
 export GOPATH=$HOME
@@ -65,7 +66,8 @@ if [ $commands[kubectl] ]; then
 fi
 
 export PATH=$PATH:$HOME/.linkerd2/bin
-export PATH=$PATH:$HOME/.rbenv/bin
+export EDITOR="/usr/local/bin/nvim"
 
-eval "$(rbenv init -)"
+source $HOME/.profile
 
+source <(plz --completion_script)

@@ -1,17 +1,18 @@
-" vim-bootstrap 2021-11-01 09:24:29
+" vim-bootstrap 2021-11-01 09:42:01
 
 "*****************************************************************************
 "" Vim-Plug core
 "*****************************************************************************
-let vimplug_exists=expand('~/./autoload/plug.vim')
+let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 if has('win32')&&!has('win64')
   let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
 else
   let curl_exists=expand('curl')
 endif
 
-let g:vim_bootstrap_langs = "c,go,html,javascript,rust,typescript"
-let g:vim_bootstrap_editor = ""				" nvim or vim
+let g:vim_bootstrap_langs = "go,html,javascript,rust,typescript"
+"let g:vim_bootstrap_langs = "c,go,html,javascript,rust,typescript"
+let g:vim_bootstrap_editor = "neovim"				" nvim or vim
 let g:vim_bootstrap_theme = "pencil"
 let g:vim_bootstrap_frams = ""
 
@@ -29,7 +30,7 @@ if !filereadable(vimplug_exists)
 endif
 
 " Required:
-call plug#begin(expand('~/./plugged'))
+call plug#begin(expand('~/.config/nvim/plugged'))
 
 "*****************************************************************************
 "" Plug install packages
@@ -50,6 +51,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'Mizux/vim-colorschemes'
+Plug 'tanvirtin/monokai.nvim'
+Plug 'github/copilot.vim'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -76,8 +79,8 @@ Plug 'honza/vim-snippets'
 "*****************************************************************************
 
 " c
-Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-Plug 'ludwig/split-manpage.vim'
+"Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
+"Plug 'ludwig/split-manpage.vim'
 
 
 " go
@@ -127,8 +130,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 "*****************************************************************************
 
 "" Include user's extra bundle
-if filereadable(expand("~/.rc.local.bundles"))
-  source ~/.rc.local.bundles
+if filereadable(expand("~/.config/nvim/local_bundles.vim"))
+  source ~/.config/nvim/local_bundles.vim
 endif
 
 call plug#end()
@@ -176,7 +179,7 @@ else
 endif
 
 " session management
-let g:session_directory = "~/./session"
+let g:session_directory = "~/.config/nvim/session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
@@ -189,7 +192,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme molokai
+colorscheme monokai
 
 set mousemodel=popup
 set t_Co=256
@@ -581,8 +584,8 @@ let g:yats_host_keyword = 1
 "*****************************************************************************
 
 "" Include user's local vim config
-if filereadable(expand("~/.rc.local"))
-  source ~/.rc.local
+if filereadable(expand("~/.config/nvim/local_init.vim"))
+  source ~/.config/nvim/local_init.vim
 endif
 
 "*****************************************************************************

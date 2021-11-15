@@ -5,9 +5,13 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = vim
+	editor = nvim
 [gpg]
 	program = gpg2
 [alias]
     lol-pr = "!git log --merges --pretty=format:%b --notes 'git describe --abbrev=0 --tags'"
     c = "commit -s"
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
