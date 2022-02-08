@@ -10,7 +10,6 @@ ZSH_THEME="brancz"
 if [[ "$OSTYPE" == linux* ]]; then
   alias open="gnome-open"
 fi
-alias vi="nvim"
 alias r="ranger"
 alias cb="xclip -selection c -i"
 
@@ -18,7 +17,6 @@ plugins=(git pass)
 
 source $ZSH/oh-my-zsh.sh
 alias ls="ls -G --color=auto"
-alias vim="nvim"
 
 export EC2_HOME=/usr/local/ec2
 export GOPATH=$HOME
@@ -31,6 +29,7 @@ export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/usr/local/apiserver-builder/bin
 export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.tiup/bin
 
 function resetdocker() {
   unset DOCKER_TLS_VERIFY
@@ -71,3 +70,5 @@ export EDITOR="/usr/local/bin/nvim"
 source $HOME/.profile
 
 source <(plz --completion_script)
+
+export PATH=/home/brancz/.tiup/bin:$PATH
