@@ -53,6 +53,8 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'Mizux/vim-colorschemes'
 Plug 'tanvirtin/monokai.nvim'
 Plug 'github/copilot.vim'
+Plug 'sebdah/vim-delve'
+Plug 'google/vim-jsonnet'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -72,7 +74,7 @@ Plug 'xolox/vim-session'
 
 "" Snippets
 Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+""Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "*****************************************************************************
 "" Custom bundles

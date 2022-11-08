@@ -7,7 +7,7 @@
 [core]
 	editor = nvim
 [gpg]
-	program = gpg2
+	program = gpg
 [alias]
     lol-pr = "!git log --merges --pretty=format:%b --notes 'git describe --abbrev=0 --tags'"
     c = "commit -s"
