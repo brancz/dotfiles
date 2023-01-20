@@ -1,9 +1,9 @@
-" vim-bootstrap 2021-11-01 09:42:01
+" vim-bootstrap 2022-11-08 10:23:56
 
 "*****************************************************************************
 "" Vim-Plug core
 "*****************************************************************************
-let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+let vimplug_exists=expand('~/./autoload/plug.vim')
 if has('win32')&&!has('win64')
   let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
 else
@@ -11,9 +11,8 @@ else
 endif
 
 let g:vim_bootstrap_langs = "go,html,javascript,rust,typescript"
-"let g:vim_bootstrap_langs = "c,go,html,javascript,rust,typescript"
-let g:vim_bootstrap_editor = "neovim"				" nvim or vim
-let g:vim_bootstrap_theme = "pencil"
+let g:vim_bootstrap_editor = ""				" nvim or vim
+let g:vim_bootstrap_theme = "monokai"
 let g:vim_bootstrap_frams = ""
 
 if !filereadable(vimplug_exists)
@@ -30,7 +29,7 @@ if !filereadable(vimplug_exists)
 endif
 
 " Required:
-call plug#begin(expand('~/.config/nvim/plugged'))
+call plug#begin(expand('~/./plugged'))
 
 "*****************************************************************************
 "" Plug install packages
@@ -73,17 +72,12 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 "" Snippets
+"" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-""Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
-
-" c
-"Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
-"Plug 'ludwig/split-manpage.vim'
-
 
 " go
 "" Go Lang Bundle
@@ -132,8 +126,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 "*****************************************************************************
 
 "" Include user's extra bundle
-if filereadable(expand("~/.config/nvim/local_bundles.vim"))
-  source ~/.config/nvim/local_bundles.vim
+if filereadable(expand("~/.rc.local.bundles"))
+  source ~/.rc.local.bundles
 endif
 
 call plug#end()
@@ -181,7 +175,7 @@ else
 endif
 
 " session management
-let g:session_directory = "~/.config/nvim/session"
+let g:session_directory = "~/./session"
 let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
@@ -195,6 +189,13 @@ set number
 
 let no_buffers_menu=1
 colorscheme monokai
+
+
+" Better command line completion 
+set wildmenu
+
+" mouse support
+set mouse=a
 
 set mousemodel=popup
 set t_Co=256
@@ -211,7 +212,7 @@ else
 
   " IndentLine
   let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
+  let g:indentLine_concealcursor = ''
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
@@ -285,13 +286,13 @@ cnoreabbrev Qall qall
 
 "" NERDTree configuration
 let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeIgnore=['node_modules','\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
@@ -363,12 +364,12 @@ noremap <Leader>v :<C-u>vsplit<CR>
 "" Git
 noremap <Leader>ga :Gwrite<CR>
 noremap <Leader>gc :Git commit --verbose<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+noremap <Leader>gsh :Git push<CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gs :Git<CR>
+noremap <Leader>gb :Git blame<CR>
+noremap <Leader>gd :Gvdiffsplit<CR>
+noremap <Leader>gr :GRemove<CR>
 
 " session management
 nnoremap <leader>so :OpenSession<Space>
@@ -481,11 +482,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
-" c
-autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
-autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
-
-
 " go
 " vim-go
 " run :GoBuild or :GoTestCompile based on the go file
@@ -586,8 +582,8 @@ let g:yats_host_keyword = 1
 "*****************************************************************************
 
 "" Include user's local vim config
-if filereadable(expand("~/.config/nvim/local_init.vim"))
-  source ~/.config/nvim/local_init.vim
+if filereadable(expand("~/.rc.local"))
+  source ~/.rc.local
 endif
 
 "*****************************************************************************
